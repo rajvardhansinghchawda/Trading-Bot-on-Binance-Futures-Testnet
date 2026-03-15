@@ -219,9 +219,9 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--symbol", help="Trading pair (e.g. BTCUSDT)")
     parser.add_argument("--side", choices=["BUY", "SELL"], help="Order side")
     parser.add_argument("--type", choices=["MARKET", "LIMIT", "STOP_MARKET", "STOP_LIMIT"], dest="type", help="Order type")
-    parser.add_argument("--quantity", dest="quantity", help="Order quantity")
+    parser.add_argument("--quantity", "--qty", dest="quantity", help="Order quantity")
     parser.add_argument("--price", default=None, help="Limit price (required for LIMIT)")
-    parser.add_argument("--stop-price", dest="stop_price", default=None, help="Stop trigger price (required for STOP_MARKET)")
+    parser.add_argument("--stop-price", "--stop", dest="stop_price", default=None, help="Stop trigger price (required for STOP_MARKET)")
     parser.add_argument("--tif", default="GTC", choices=["GTC", "IOC", "FOK"], help="Time-in-force for LIMIT orders (default: GTC)")
     parser.add_argument("--reduce-only", dest="reduce_only", action="store_true", help="Reduce-only flag")
 
